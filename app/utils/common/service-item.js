@@ -51,12 +51,6 @@ const TABLE_FIELDS = [
     }
   ),
   field(
-    'id_service_owner.full_name', {
-      type: 'text',
-      label: 'service_owner.belongs.full_name'
-    }
-  ),
-  field(
     'id_contact_information.full_name', {
       type: 'text',
       label: 'Contact Information'
@@ -117,12 +111,6 @@ const BASIC_INFO_FIELDS =  [
     }
   ),
   field(
-    'id_service_owner.full_name', {
-      type: 'text',
-      label: 'service_owner.belongs.full_name'
-    }
-  ),
-  field(
     'id_contact_information.full_name', {
       type: 'text',
       label: 'Contact Information'
@@ -134,6 +122,8 @@ const BASIC_INFO_FIELDS =  [
       label: 'Contact Information'
     }
   ),
+  'customer_facing',
+  'internal',
 ];
 
 const BASIC_INFO_FORM_FIELDS_EDIT =  [
@@ -175,11 +165,6 @@ const BASIC_INFO_FORM_FIELDS_EDIT =  [
     }
   ),
   field(
-    'id_service_owner', {
-      label: 'service_owner.belongs.full_name'
-    }
-  ),
-  field(
     'id_contact_information', {
       label: 'contact_information.belongs.external'
     }
@@ -189,6 +174,8 @@ const BASIC_INFO_FORM_FIELDS_EDIT =  [
       label: 'contact_information.belongs.internal'
     }
   ),
+  'customer_facing',
+  'internal',
 ];
 
 const BASIC_INFO_FORM_FIELDS_CREATE =  [
@@ -220,11 +207,6 @@ const BASIC_INFO_FORM_FIELDS_CREATE =  [
     }
   ),
   field(
-    'id_service_owner', {
-      label: 'service_owner.belongs.full_name'
-    }
-  ),
-  field(
     'id_contact_information', {
       label: 'contact_information.belongs.external'
     }
@@ -234,13 +216,15 @@ const BASIC_INFO_FORM_FIELDS_CREATE =  [
       label: 'contact_information.belongs.internal'
     }
   ),
+  'customer_facing',
+  'internal',
 ];
 
 const DETAILS_BASIC_INFO_FIELDSET = {
   label: 'service_item.cards.basic_information',
   fields: BASIC_INFO_FIELDS,
   layout: {
-    flex: [ 100, 100, 100, 100, 100, 100, 100, 100, 100 ]
+    flex: [ 100, 100, 100, 100, 100, 100, 100, 100, 100, 50, 50 ]
   }
 };
 
@@ -340,7 +324,7 @@ const USER_CUSTOMERS_FIELDSET = {
       displayComponent: 'gen-display-field-table',
       valueQuery: (store, params, model, value) => {
         if(model.get('id')) {
-          return store.query('user_customer', { id_service: model.get('id') });
+          return store.query('user_customer', { service_id: model.get('id') });
         }
       },
       modelMeta: {

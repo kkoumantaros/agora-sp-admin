@@ -14,11 +14,15 @@ const {
 
 const AgoraGen = CRUDGen.extend({
   auth: true,
+  _metaMixin: {
+    session: Ember.inject.service(),
+    role: reads('session.session.authenticated.role')
+  },
   list: {
     layout: 'table',
     paginate: {
       limits: [ 10, 50, 100 ],
-      serverSide: false,
+      serverSide: true,
       active: true
     }
   },
