@@ -3,8 +3,9 @@ import { fileField } from '../../lib/common';
 
 const SORT_FIELDS = [
   'name',
-  'service_area.name',
-  'service_trl.value'
+  'service_area_ext',
+  'service_trl_ext',
+  'service_type',
 ];
 
 /********************************************
@@ -25,7 +26,7 @@ const TABLE_FIELDS = [
     }
   ),*/
   field(
-    'service_area.name', {
+    'service_area_ext', {
       type: 'text',
       label: 'service_item.fields.service_area'
     }
@@ -37,7 +38,7 @@ const TABLE_FIELDS = [
     }
   ),
   field(
-    'service_trl.value', {
+    'service_trl_ext', {
       type: 'text',
       label: 'service_trl.belongs.value'
     }
@@ -53,13 +54,13 @@ const TABLE_FIELDS = [
   field(
     'id_contact_information.full_name', {
       type: 'text',
-      label: 'Contact Information'
+      label: 'External Contact'
     }
   ),
   field(
     'id_contact_information_internal.full_name', {
       type: 'text',
-      label: 'Contact Information'
+      label: 'Internal Contact'
     }
   ),
 ];
@@ -463,7 +464,7 @@ const BUSINESS_INFO_FIELDSET = {
   layout: {
     flex: [ 100, 100, 100, 100 ]
   }
-}
+};
 
 const DETAILS_FIELDSETS = [
   DETAILS_BASIC_INFO_FIELDSET,
