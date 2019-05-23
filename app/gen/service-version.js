@@ -25,6 +25,13 @@ export default AgoraGen.extend({
       id_service: [validate.presence(true)],
       version: [validate.presence(true)],
       status : [validate.presence(true)],
+      sla_url: [validate.format({ type: 'url', allowBlank: true })],
+      terms_of_use_url: [validate.format({ type: 'url', allowBlank: true })],
+      privacy_policy_url: [validate.format({ type: 'url', allowBlank: true })],
+      user_manual: [validate.format({ type: 'url', allowBlank: true })],
+      admin_manual: [validate.format({ type: 'url', allowBlank: true })],
+      monitoring_url: [validate.format({ type: 'url', allowBlank: true })],
+      maintenance_url: [validate.format({ type: 'url', allowBlank: true })],
     },
   },
   abilityStates: {
@@ -132,6 +139,8 @@ export default AgoraGen.extend({
       const param = model.get('param_service');
       if(param) {
         this.transitionTo(`/services/${param}`);
+      } else {
+        this.transitionTo('service-version.record.index', model);
       }
     }
   },

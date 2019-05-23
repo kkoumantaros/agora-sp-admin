@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    theme: 'theme-eosc',
     modulePrefix: 'agora-admin',
     environment: environment,
     i18n: {
@@ -28,6 +29,8 @@ module.exports = function(environment) {
       backend_media_root: 'http://127.0.0.1:8080/static/img/',
       date_format: 'DD/MM/YYYY',
       default_route: 'service-item.index',
+      domestic_login_msg: 'Log in with Check-in',
+
       // Here you can pass flags/options to your application instance
       // when it is created
     }

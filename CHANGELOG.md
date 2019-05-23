@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.9.9](https://github.com/grnet/agora-sp-admin/compare/v0.9.8...v0.9.9) - 2019-05-23
+
+### Added
+- Enable multiple themes functionality.
+- Add Provider resource.
+- Add Federation Members resource.
+- Add Access Policy resource.
+- Serviceadmins can be assigned to providers by superadmins.
+- A Service can optionally belong to one or many providers.
+- New date-formatted component.
+- Add Service Dependencies fieldset to Service.
+
+### Changed
+- Rename Service Area to Service Category.
+- A Service can belong to many Service Categories.
+- Add/remove fields to models according to new guidelines.
+
 ## [v0.9.8](https://github.com/grnet/agora-sp-admin/compare/v0.9.7...v0.9.8) - 2019-03-05
 
 ### Added

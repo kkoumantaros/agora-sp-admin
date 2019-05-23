@@ -6,6 +6,7 @@ $primary: "blue" !default;
 
 @import "ember-gen";
 @import "_buttons";
+@import "_editor";
 
 $success-color: color($color-light-green, '600');
 
@@ -35,15 +36,37 @@ img.logo {
   margin-bottom: 10px!important;
 }
 
-.md-icon-success {
+body .md-icon-success {
   md-icon {
     color: $success-color !important;
   }
 }
 
 
-.checkbox-container + .md-input-hint {
+body .checkbox-container + .md-input-hint {
   position: relative;
   top: -30px;
-  left: 8px;
+  padding-left: 8px;
+}
+
+body .model-form .model-form-field:last-child .checkbox-container  + .md-input-hint {
+  top: -12px;
+}
+
+body .page-content .actions {
+  a.md-button {
+    padding: 2px 20px;
+  }
+
+}
+
+.message {
+  font-style: italic;
+}
+
+
+body .model-form md-content[data-form-field-component='gen-form-field-select-table'] .md-input-hint {
+  top: 0;
+  margin-bottom: 2em;
+
 }
