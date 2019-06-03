@@ -1,3 +1,8 @@
+# DEPRECATED
+
+This is no longer supported, as it has been merged with [Agora-sp](https://github.com/grnet/agora-sp). 
+Please consider using [Agora-sp](https://github.com/grnet/agora-sp) instead.
+
 # Agora-sp Admin
 
 Agora-sp admin is an EmberJS project that provides an intuitive user interface for the [the agora-sp](https://github.com/grnet/agora-sp) project. It allows users to create/edit/update/delete their services and components. Users can login with credentials provided by the administrator, or use the shibboleth login functionality to login with their academic account.
